@@ -1,6 +1,6 @@
 todo_list =[]
 
-    def show_mwenu():
+    def show_menu():
         print("\n=== TO-DO LIST APPLICATION ===")
         print("1. Tambah Tugas")
         print("2. Lihat Semua Tugas")

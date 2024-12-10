@@ -26,7 +26,7 @@ todo_list =[]
         if todo_list:
             try:
             task_num = int(input("\nMasukkan nomor tugas yang ingin dihapus: "))
-            
+
             if 1 <= task_num <= len(todo_list):
                 removed_task = todo_list.pop(task_num - 1)
                 print(f"Tugas '{removed_task}' berhasil dihapus!")
@@ -36,4 +36,20 @@ todo_list =[]
 
             except ValueError:
             print("Harap masukkan nomor yang valid.")
+
+while True:
+    show_menu()
+    choice = input("Pilih menu (1-4): ")
+
+    if choice == "1":
+        add_task()
+    elif choice == "2":
+        view_tasks()
+    elif choice == "3":
+        delete_task()
+    elif choice == "4":
+        print("Terima kasih telah menggunakan aplikasi ini!")
+        break
+    else:
+        print("Pilihan tidak valid, silakan coba lagi.")
 

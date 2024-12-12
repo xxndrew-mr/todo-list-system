@@ -1,19 +1,19 @@
 from datetime import datetime
 
-# List untuk menyimpan tugas
+
 todo_list = []
 
-# Kelas untuk merepresentasikan tugas
+
 class Task:
     def __init__(self, name, priority, due_date):
         self.name = name
-        self.priority = priority  # Prioritas: 1 (Tinggi), 2 (Sedang), 3 (Rendah)
-        self.due_date = datetime.strptime(due_date, "%Y-%m-%d")  # Format: YYYY-MM-DD
+        self.priority = priority 
+        self.due_date = datetime.strptime(due_date, "%Y-%m-%d") 
 
     def __str__(self):
         return f"{self.name} | Prioritas: {self.priority} | Tenggat: {self.due_date.strftime('%Y-%m-%d')}"
 
-# Fungsi untuk menampilkan menu utama
+
 def show_menu():
     print("\n=== TO-DO LIST APPLICATION ===")
     print("1. Tambah Tugas")
@@ -24,7 +24,7 @@ def show_menu():
     print("6. Keluar")
     print("=============================")
 
-# Fungsi untuk menambah tugas baru
+
 def add_task():
     name = input("Masukkan nama tugas: ")
     while True:
@@ -44,7 +44,7 @@ def add_task():
     except ValueError:
         print("Format tanggal tidak valid. Gunakan format YYYY-MM-DD.")
 
-# Fungsi untuk melihat semua tugas
+
 def view_tasks():
     if not todo_list:
         print("Tidak ada tugas dalam daftar.")
@@ -53,7 +53,7 @@ def view_tasks():
         for i, task in enumerate(todo_list, start=1):
             print(f"{i}. {task}")
 
-# Fungsi untuk menghapus tugas
+
 def delete_task():
     view_tasks()
     if todo_list:
@@ -67,7 +67,7 @@ def delete_task():
         except ValueError:
             print("Harap masukkan nomor yang valid.")
 
-# Fungsi untuk menyortir tugas berdasarkan prioritas
+
 def sort_by_priority():
     if not todo_list:
         print("Tidak ada tugas untuk diurutkan.")
@@ -76,7 +76,7 @@ def sort_by_priority():
     print("Daftar tugas berhasil diurutkan berdasarkan prioritas (1: Tinggi, 2: Sedang, 3: Rendah).")
     view_tasks()
 
-# Fungsi untuk menyortir tugas berdasarkan tenggat waktu
+
 def sort_by_due_date():
     if not todo_list:
         print("Tidak ada tugas untuk diurutkan.")
@@ -85,7 +85,7 @@ def sort_by_due_date():
     print("Daftar tugas berhasil diurutkan berdasarkan tenggat waktu (paling dekat ke paling jauh).")
     view_tasks()
 
-# Program utama
+
 while True:
     show_menu()
     choice = input("Pilih menu (1-6): ")

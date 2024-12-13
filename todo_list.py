@@ -87,21 +87,25 @@ def sort_by_due_date():
 
 
 while True:
-    show_menu()
-    choice = input("Pilih menu (1-6): ")
+    try:
+        show_menu()
+        choice = input("Pilih menu (1-6): ").strip()
 
-    if choice == "1":
-        add_task()
-    elif choice == "2":
-        view_tasks()
-    elif choice == "3":
-        delete_task()
-    elif choice == "4":
-        sort_by_priority()
-    elif choice == "5":
-        sort_by_due_date()
-    elif choice == "6":
-        print("Terima kasih telah menggunakan aplikasi ini!")
-        break
-    else:
-        print("Pilihan tidak valid, silakan coba lagi.")
+        if choice == "1":
+            add_task()
+        elif choice == "2":
+            view_tasks()
+        elif choice == "3":
+            delete_task()
+        elif choice == "4":
+            sort_by_priority()
+        elif choice == "5":
+            sort_by_due_date()
+        elif choice == "6":
+            print("Terima kasih telah menggunakan aplikasi ini!")
+            break
+        else:
+            print("Pilihan tidak valid, silakan coba lagi.")
+    except Exception as e:
+        print(f"Terjadi kesalahan: {e}")
+

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <a href="/add">Add Task</a>
+    <a href="/sort/priority">Sort by Priority</a>
+    <a href="/sort/due_date">Sort by Due Date</a>
+    <ul>
+        {% for task in tasks %}
+            <li>
+                {{ task.name }} | Priority: {{ task.priority }} | Due: {{ task.due_date.strftime('%Y-%m-%d') }}
+                <a href="/delete/{{ loop.index0 }}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -108,4 +108,3 @@ while True:
             print("Pilihan tidak valid, silakan coba lagi.")
     except Exception as e:
         print(f"Terjadi kesalahan: {e}")
-
